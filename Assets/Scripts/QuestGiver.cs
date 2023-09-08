@@ -13,7 +13,7 @@ public class QuestGiver : MonoBehaviour
     {
         if (other.CompareTag("MainCharacter"))
         {
-            if (pressEText != null && Input.GetKey(KeyCode.E))
+            if (pressEText.activeSelf == true && Input.GetKey(KeyCode.E))
             {
                 textPopUp.SetActive(true);
                 pressEText.SetActive(false);
@@ -23,13 +23,13 @@ public class QuestGiver : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.CompareTag("MainCharacter"))
+        if(other.CompareTag("MainCharacter") && pressEText.activeSelf == false && textPopUp.activeSelf == false)
         {
             pressEText.SetActive(true);
             audioSource = GetComponent<AudioSource>();
             audioSource.PlayOneShot(hmmSound, 0.5f);
             
-        }  
+        } 
     }
     private void OnTriggerExit2D(Collider2D other)
     {
