@@ -6,14 +6,29 @@ public class QuestGiver : MonoBehaviour
 {
     [SerializeField] private GameObject textPopUp;
     [SerializeField] private AudioClip hmmSound;
+    [SerializeField] private GameObject pressEText;
     private AudioSource audioSource;
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.CompareTag("MainCharacter"))
+        {
+            if (pressEText != null && Input.GetKey(KeyCode.E))
+            {
+                textPopUp.SetActive(true);
+                pressEText.SetActive(false);
+            }
+                
+        }
+    }
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.CompareTag("MainCharacter"))
         {
-            textPopUp.SetActive(true);
+            pressEText.SetActive(true);
             audioSource = GetComponent<AudioSource>();
             audioSource.PlayOneShot(hmmSound, 0.5f);
+            
         }  
     }
     private void OnTriggerExit2D(Collider2D other)
@@ -28,6 +43,7 @@ public class QuestGiver : MonoBehaviour
     public void WaitUntilInactive()
     {
         textPopUp.SetActive(false);
+        pressEText.SetActive(false);
     }
 
     
