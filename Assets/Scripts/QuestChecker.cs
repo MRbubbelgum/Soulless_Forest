@@ -8,25 +8,37 @@ public class QuestChecker : MonoBehaviour
     [SerializeField] private GameObject doorTextBox, finishedText, unfinishedText;
     [SerializeField] private int keysAmount;
     [SerializeField] private int levelToLoad;
+    [SerializeField] private GameObject Ebutton;
 
     private bool levelIsLoading = false;
-    private void OnTriggerEnter2D(Collider2D other)
+
+    private void OnTriggerStay2D(Collider2D other)
     {
         if (other.CompareTag("MainCharacter"))
         {
-            if(other.GetComponent<PlayerMovement>().keysCollected >= 3)
+
+            if (Input.GetKey(KeyCode.E))
             {
-                doorTextBox.SetActive(true);
-                finishedText.SetActive(true);
-                Invoke("LoadNextLevel", 3f);
-                levelIsLoading = true;
-            }
-            else
-            {
-                doorTextBox.SetActive(true);
-                unfinishedText.SetActive(true);
+                if (other.GetComponent<PlayerMovement>().keysCollected >= 3)
+                {
+                    Ebutton.SetActive(false);
+                    doorTextBox.SetActive(true);
+                    finishedText.SetActive(true);
+                    Invoke("LoadNextLevel", 3f);
+                    levelIsLoading = true;
+                }
+                else
+                {
+                    Ebutton.SetActive(false);
+                    doorTextBox.SetActive(true);
+                    unfinishedText.SetActive(true);
+                }
             }
         }
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        Ebutton.SetActive(true);
     }
     private void LoadNextLevel()
     {
@@ -45,5 +57,6 @@ public class QuestChecker : MonoBehaviour
             doorTextBox.SetActive(false);
             finishedText.SetActive(false);
             unfinishedText.SetActive(false);
+        Ebutton.SetActive(false);
     }
 }
