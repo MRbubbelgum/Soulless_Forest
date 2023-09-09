@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Color greenHealth, redHealth;
     [SerializeField] private Color redHeart;
     [SerializeField] private TMP_Text keyTextUpdate;
-    [SerializeField] private AudioClip hurtSound, healthPickupSound, keySound;
+    [SerializeField] private AudioClip hurtSound, healthPickupSound, keySound, runGrassSound;
     [SerializeField] private AudioClip[] jumpGrassSounds;
     [SerializeField] private GameObject appleParticals, dustParticles;
 
@@ -36,10 +36,14 @@ public class PlayerMovement : MonoBehaviour
     public int currentHealth;
     private CapsuleCollider2D capsuleCollider;
     public int keysCollected = 0;
-    private AudioSource audioSource;
-    
+    private bool canPlayRunningSound = true;
+    [SerializeField] private float runningSoundCooldown = 0.45f;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioSource audioSource2;
+    [SerializeField] private AudioSource audioSource3;
 
-    
+
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();  
@@ -48,8 +52,8 @@ public class PlayerMovement : MonoBehaviour
         currentHealth = startingHealth;
         keyTextUpdate.text = "" + keysCollected;
         capsuleCollider = GetComponent<CapsuleCollider2D>();
-        audioSource = GetComponent<AudioSource>();
         transform.position = spawnPosition.position;
+       
     }
 
     private void Update()
@@ -91,6 +95,20 @@ public class PlayerMovement : MonoBehaviour
             animator.SetBool("IsJumping", false);
         }
         animator.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
+        if(Mathf.Abs(rb.velocity.x) > 2.5 && CheckIfGrounded() == true)
+        {
+            if (canPlayRunningSound)
+            {
+                audioSource3.PlayOneShot(runGrassSound, 1f);
+                canPlayRunningSound = false; 
+                StartCoroutine(EnableRunningSoundAfterCooldown());
+            }
+
+        }
+        else
+        {
+            audioSource3.Stop();
+        }
         
        
     }
@@ -111,7 +129,7 @@ public class PlayerMovement : MonoBehaviour
             keysCollected++;
             keyTextUpdate.text = "" + keysCollected;
             audioSource.pitch = 1f;
-            audioSource.PlayOneShot(keySound, 0.5f);
+            audioSource.PlayOneShot(keySound, 0.15f);
         }
         if(other.CompareTag("Cherry"))
         {
@@ -134,14 +152,19 @@ public class PlayerMovement : MonoBehaviour
         animator.SetBool("IsJumping", true);
         
     }
-    
+
+    private IEnumerator EnableRunningSoundAfterCooldown()
+    {
+        yield return new WaitForSeconds(runningSoundCooldown);
+        canPlayRunningSound = true; 
+    }
     public void TakeDamage(int damageAmount)
     {
         currentHealth -= damageAmount;
         UpdateHealthBar();
         animator.SetTrigger("Hurt");
-        audioSource.pitch = Random.Range(2.7f, 2.9f);
-        audioSource.PlayOneShot(hurtSound, 1f);
+        
+        audioSource2.PlayOneShot(hurtSound, 1f);
         animator.SetBool("IsHurting", true);
         if (currentHealth < 0) 
         {

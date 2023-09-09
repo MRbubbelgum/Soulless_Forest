@@ -27,7 +27,7 @@ public class QuestGiver : MonoBehaviour
         {
             pressEText.SetActive(true);
             audioSource = GetComponent<AudioSource>();
-            audioSource.PlayOneShot(hmmSound, 0.5f);
+            audioSource.PlayOneShot(hmmSound, 0.8f);
             
         } 
     }
