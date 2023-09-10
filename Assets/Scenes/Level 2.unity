@@ -852,7 +852,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 62921c9f24f49c641a3789afe7003e3d, type: 3}
-  m_Color: {r: 0.8066038, g: 1, b: 0.806683, a: 1}
+  m_Color: {r: 0.51370597, g: 0.9811321, b: 0.56662214, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -24756,6 +24756,9 @@ MonoBehaviour:
   finishedText: {fileID: 1590895419}
   unfinishedText: {fileID: 50880514}
   keysAmount: 3
+  levelToLoad: 0
+  Ebutton: {fileID: 0}
+  enterTowerText: {fileID: 0}
 --- !u!1 &362774518
 GameObject:
   m_ObjectHideFlags: 0
@@ -26076,7 +26079,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 62921c9f24f49c641a3789afe7003e3d, type: 3}
-  m_Color: {r: 0.8066038, g: 1, b: 0.806683, a: 1}
+  m_Color: {r: 0.51370597, g: 0.9811321, b: 0.56662214, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -31994,6 +31997,7 @@ MonoBehaviour:
   hurtSound: {fileID: 8300000, guid: 18c1a0203435c71449dbfb8f00330154, type: 3}
   healthPickupSound: {fileID: 8300000, guid: e108b408f38581f448112671efb6daca, type: 3}
   keySound: {fileID: 8300000, guid: 92128134a73b86f468a2a2ee262ab64f, type: 3}
+  runGrassSound: {fileID: 0}
   jumpGrassSounds:
   - {fileID: 8300000, guid: 79f8d8b8d96693646aef5e08c79ead50, type: 3}
   - {fileID: 8300000, guid: 82d9d927977bf3f4788e880abb6e13d2, type: 3}
@@ -32008,6 +32012,10 @@ MonoBehaviour:
   animator: {fileID: 0}
   currentHealth: 0
   keysCollected: 0
+  runningSoundCooldown: 0.45
+  audioSource: {fileID: 0}
+  audioSource2: {fileID: 0}
+  audioSource3: {fileID: 0}
 --- !u!70 &968540428
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -34340,7 +34348,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textPopUp: {fileID: 1134958427}
+  pressEText: {fileID: 0}
+  questDetailsText: {fileID: 0}
+  forestStoryText: {fileID: 0}
+  audioSource1: {fileID: 0}
+  audioSource2: {fileID: 0}
   hmmSound: {fileID: 8300000, guid: 9739c5e3d61e03d479af65f2dc3b06e4, type: 3}
+  questDetailsSound: {fileID: 0}
+  forestStoryAndQuestDetailsSound: {fileID: 0}
 --- !u!61 &1540346790
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -34640,7 +34655,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 62921c9f24f49c641a3789afe7003e3d, type: 3}
-  m_Color: {r: 0.8066038, g: 1, b: 0.806683, a: 1}
+  m_Color: {r: 0.51370597, g: 0.9811321, b: 0.56662214, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
