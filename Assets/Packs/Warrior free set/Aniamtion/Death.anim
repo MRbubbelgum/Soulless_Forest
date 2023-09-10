@@ -107,3 +107,10 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
+  - time: 1
+    functionName: AfterDeath
+    data: 
+    objectReferenceParameter: {fileID: 11500000, guid: 9c7927ccd89110f46a99b3f2b71cc8be, type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0

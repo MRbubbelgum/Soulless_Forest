@@ -129,7 +129,7 @@ public class PlayerMovement : MonoBehaviour
             keysCollected++;
             keyTextUpdate.text = "" + keysCollected;
             audioSource.pitch = 1f;
-            audioSource.PlayOneShot(keySound, 0.15f);
+            audioSource.PlayOneShot(keySound, 0.13f);
         }
         if(other.CompareTag("Cherry"))
         {
@@ -164,9 +164,9 @@ public class PlayerMovement : MonoBehaviour
         UpdateHealthBar();
         animator.SetTrigger("Hurt");
         
-        audioSource2.PlayOneShot(hurtSound, 1f);
+        audioSource2.PlayOneShot(hurtSound, 0.6f);
         animator.SetBool("IsHurting", true);
-        if (currentHealth < 0) 
+        if (currentHealth <= 0) 
         {
             Death();
         }
@@ -182,8 +182,17 @@ public class PlayerMovement : MonoBehaviour
     }
     public void Death()
     {
+        
         CantMove();
         animator.SetBool("Death", true);
+        if(CheckIfGrounded() == true)
+        {
+            AfterDeath();
+        }
+        
+    }
+    public void AfterDeath()
+    {
         rb.bodyType = RigidbodyType2D.Static;
         capsuleCollider.enabled = false;
         rb.velocity = new Vector2(0, 0);
@@ -230,7 +239,7 @@ public class PlayerMovement : MonoBehaviour
             UpdateHealthBar();
             Destroy(cherry);
             audioSource.pitch = Random.Range(2.7f, 2.9f);
-            audioSource.PlayOneShot(healthPickupSound, 0.5f);
+            audioSource.PlayOneShot(healthPickupSound, 0.15f);
             Instantiate(appleParticals, cherry.transform.position, Quaternion.identity);
             if (currentHealth >= startingHealth)
             {

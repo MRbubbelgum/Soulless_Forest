@@ -10,6 +10,8 @@ public class EnemyMushroom : MonoBehaviour
     [SerializeField] private int damageGiven = 40;
     [SerializeField] private float knockbackForce = 400f;
     [SerializeField] private float knockupForce = 100f;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip mushroomDeathSound;
 
     public SpriteRenderer spriteRenderer;
     public Animator animator;
@@ -24,6 +26,7 @@ public class EnemyMushroom : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         circleCollider = GetComponent<CircleCollider2D>();
         boxCollider = GetComponent<BoxCollider2D>();
+        audioSource = GetComponent<AudioSource>();
     }
     void FixedUpdate()
     {
@@ -67,6 +70,7 @@ public class EnemyMushroom : MonoBehaviour
     {
         if(other.CompareTag("MainCharacter"))
         {
+            audioSource.PlayOneShot(mushroomDeathSound, 0.35f);
             other.GetComponent<Rigidbody2D>().velocity = new Vector2(other.GetComponent<Rigidbody2D>().velocity.x, 0);
             other.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, bounciness));
             other.GetComponent<PlayerMovement>().runSpeed = 15f;
