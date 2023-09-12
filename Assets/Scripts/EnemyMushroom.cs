@@ -12,6 +12,8 @@ public class EnemyMushroom : MonoBehaviour
     [SerializeField] private float knockupForce = 100f;
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip mushroomDeathSound;
+    [SerializeField] private int health = 2;
+
 
     public SpriteRenderer spriteRenderer;
     public Animator animator;
@@ -42,7 +44,12 @@ public class EnemyMushroom : MonoBehaviour
         }
         animator.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
 
+        if(health <= 0)
+        {
+            die();
+        }
     }
+    
     public void OnCollisionEnter2D(Collision2D other)
     {
         if(other.gameObject.CompareTag("EnemyMushroomBlock"))
@@ -71,9 +78,9 @@ public class EnemyMushroom : MonoBehaviour
         if(other.CompareTag("MainCharacter"))
         {
             audioSource.PlayOneShot(mushroomDeathSound, 0.35f);
-            other.GetComponent<Rigidbody2D>().velocity = new Vector2(other.GetComponent<Rigidbody2D>().velocity.x, 0);
+            /*other.GetComponent<Rigidbody2D>().velocity = new Vector2(other.GetComponent<Rigidbody2D>().velocity.x, 0);
             other.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, bounciness));
-            other.GetComponent<PlayerMovement>().runSpeed = 15f;
+            other.GetComponent<PlayerMovement>().runSpeed = 15f;*/
             animator.SetBool("IsDead", true);
             
             rb.gravityScale = 0;
@@ -82,6 +89,20 @@ public class EnemyMushroom : MonoBehaviour
             circleCollider.enabled = false;
             this.enabled = false;
         }
+    }
+    public void TakeDamageEnemy(int damage)
+    {
+        health -= damage;
+        Debug.Log("Damage TAKEN!");
+    }
+    public void die()
+    {
+        audioSource.PlayOneShot(mushroomDeathSound, 0.35f);
+        rb.velocity = Vector2.zero;
+        animator.SetBool("IsDead", true);
+        rb.gravityScale = 0;
+        boxCollider.enabled = false;
+        circleCollider.enabled = false;
     }
 
 }

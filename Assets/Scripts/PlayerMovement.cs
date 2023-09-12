@@ -60,11 +60,11 @@ public class PlayerMovement : MonoBehaviour
             horizontalValue = Input.GetAxisRaw("Horizontal");
             if (horizontalValue < 0)
             {
-                Flip(true);
+                transform.localScale = new Vector3(-2, 2, 2);
             }
             if (horizontalValue > 0)
             {
-                Flip(false);
+                transform.localScale = new Vector3(2, 2, 2);
             }
         }
         

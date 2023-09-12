@@ -1,10 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*
 public class Attack_DashAttack : MonoBehaviour
 {
-        /*
+       
     void Start()
     {
         
@@ -151,5 +151,6 @@ public class Attack_DashAttack : MonoBehaviour
         if (attackPoint == null)
             return;
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
-    }*/
+    }
 }
+       */
