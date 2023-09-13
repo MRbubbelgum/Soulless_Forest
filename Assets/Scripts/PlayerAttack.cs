@@ -14,6 +14,7 @@ public class PlayerAttack : MonoBehaviour
     public float attackRange;
     [SerializeField] private int damage;
     private Animator anim;
+    private bool hasHitEnemy = false;
 
     private void Start()
     {
@@ -33,13 +34,14 @@ public class PlayerAttack : MonoBehaviour
             Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatIsEnemies);
                 foreach (Collider2D enemyCollider in enemiesToDamage)
                 {
-                    if (enemyCollider.CompareTag("EnemyMushroom"))
+                    if (enemyCollider.CompareTag("EnemyMushroom") && !hasHitEnemy)
                     {
 
                         EnemyMushroom enemy = enemyCollider.GetComponent<EnemyMushroom>();
                         if (enemy != null)
                         {
                             enemy.TakeDamageEnemy(damage);
+                            hasHitEnemy = true;
                         }
                     }
                 }
@@ -51,7 +53,11 @@ public class PlayerAttack : MonoBehaviour
     {
         timeBtwAttack -= Time.deltaTime;
     }
-}
+        if (anim.GetCurrentAnimatorStateInfo(0).IsName("IsAttacking"))
+        {
+            hasHitEnemy = false;
+        }
+    }
         void OnDrawGizmosSelected()
         {
             Gizmos.color = Color.red;
