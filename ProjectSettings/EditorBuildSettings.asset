@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Level 1.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/Level 2.unity
+    path: "Assets/Scenes/(tempor\xE4r).unity"
     guid: 6c4c1c55e98f1a0418faa404c9db4951
   m_configObjects: {}
