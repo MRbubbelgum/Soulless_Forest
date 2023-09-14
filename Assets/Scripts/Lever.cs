@@ -4,10 +4,52 @@ using UnityEngine;
 
 public class Lever : MonoBehaviour
 {
-    private void OnCollisionEnter2D(Collision2D other)
+    [SerializeField] private GameObject pullLeverText;
+    [SerializeField] private GameObject somethingChangedText;
+    private Animator animator;
+    public bool hasPulledLever = false;
+
+    void Start()
     {
-        if(other.gameObject.CompareTag("MainCharacter"))
+        animator = GetComponent<Animator>();
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.CompareTag("MainCharacter") && hasPulledLever == false)
         {
+            pullLeverText.SetActive(true);
         }
+    }
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.CompareTag("MainCharacter") && Input.GetKey(KeyCode.E) && hasPulledLever == false)
+        {
+            animator.SetTrigger("PullLever");
+            //play sound
+            pullLeverText.SetActive(false);
+            CancelInvoke("WaitUntilRemoveText");
+            CancelInvoke("WaitUntilRemoveText2");
+            hasPulledLever = true;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("MainCharacter"))
+        {
+            Invoke("WaitUntilRemoveText", 1f);
+            Invoke("WaitUntilRemoveText2", 3f);
+        }
+    }
+    private void WaitUntilRemoveText()
+    {
+        pullLeverText.SetActive(false);
+    }
+    private void WaitUntilRemoveText2()
+    {
+        somethingChangedText.SetActive(false);
+    }
+    public void SomethingHappenedText()
+    {
+        somethingChangedText.SetActive(true);
     }
 }

@@ -10,6 +10,7 @@ TagManager:
   - EnemyMushroom
   - Key
   - Cherry
+  - Lever
   layers:
   - Default
   - TransparentFX

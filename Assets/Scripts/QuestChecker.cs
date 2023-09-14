@@ -54,7 +54,7 @@ public class QuestChecker : MonoBehaviour
     }
     private void LoadNextLevel()
     {
-        SceneManager.LoadScene(levelToLoad);
+        SceneManager.LoadScene("Tower");
     }
     private void OnTriggerExit2D(Collider2D other)
     {
