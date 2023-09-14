@@ -28,7 +28,7 @@ public class Lever : MonoBehaviour
             //play sound
             pullLeverText.SetActive(false);
             CancelInvoke("WaitUntilRemoveText");
-            CancelInvoke("WaitUntilRemoveText2");
+            Invoke("WaitUntilRemoveText2", 7f);
             hasPulledLever = true;
         }
     }
@@ -37,7 +37,7 @@ public class Lever : MonoBehaviour
         if (other.CompareTag("MainCharacter"))
         {
             Invoke("WaitUntilRemoveText", 1f);
-            Invoke("WaitUntilRemoveText2", 3f);
+            
         }
     }
     private void WaitUntilRemoveText()
