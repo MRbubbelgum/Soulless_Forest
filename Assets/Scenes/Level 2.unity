@@ -36899,10 +36899,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "You have proven your worthiness to the forest, and as a result, you have
-    been bestowed with the mighty Sword of the Lost Souls. \nThis blade was once
-    wielded by an ambitious warrior whose very soul became entwined within the depths
-    of this forest during his relentless quest for greater power... [Use the sword
+  m_text: "You have demonstrated your worthiness to the forest, and in response,
+    the forest shall now subject you to a true test of your abilities. \nFrom the
+    heart of the forest emerge creatures considerably more formidable than the soulless
+    mushrooms, demanding alternative methods for their defeat... \n[Use the sword
     (Ctrl)]"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ff0f4e65186c6bd469d2d422b6e090f3, type: 2}
@@ -37088,7 +37088,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1134958428
 RectTransform:
   m_ObjectHideFlags: 0

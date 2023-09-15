@@ -7,11 +7,13 @@ public class Door : MonoBehaviour
 {
     [SerializeField] private GameObject exitText;
     private GameObject lever;
+    private AudioSource audioSource;
     
 
     void Start()
     {
         lever = GameObject.FindGameObjectWithTag("Lever");
+        audioSource = GetComponent<AudioSource>();
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -23,9 +25,9 @@ public class Door : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D other)
     {
-        if(other.CompareTag("MainCharacter") && Input.GetKey(KeyCode.E))
+        if(other.CompareTag("MainCharacter") && Input.GetKey(KeyCode.E) && lever.GetComponent<Lever>().hasPulledLever == true)
         {
-            //playsound
+            audioSource.Play();
             SceneManager.LoadScene("Level 2");
         }
     }
