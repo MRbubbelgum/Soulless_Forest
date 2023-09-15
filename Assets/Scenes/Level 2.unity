@@ -180,7 +180,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Ask about the forest (q)
+  m_text: Ask about the sword (q)
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ff0f4e65186c6bd469d2d422b6e090f3, type: 2}
   m_sharedMaterial: {fileID: -838892363219276170, guid: ff0f4e65186c6bd469d2d422b6e090f3, type: 2}
@@ -267,7 +267,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3596024240377631074, guid: bb67ae3035abce24aa87122c96acac22, type: 3}
       propertyPath: m_Mass
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3596024240377631074, guid: bb67ae3035abce24aa87122c96acac22, type: 3}
       propertyPath: m_Constraints
@@ -319,7 +319,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5684634973922906081, guid: bb67ae3035abce24aa87122c96acac22, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.75
+      value: -9.8
       objectReference: {fileID: 0}
     - target: {fileID: 5684634973922906081, guid: bb67ae3035abce24aa87122c96acac22, type: 3}
       propertyPath: m_LocalPosition.y
@@ -364,6 +364,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5684634973922906080, guid: bb67ae3035abce24aa87122c96acac22, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1144760741}
+    - targetCorrespondingSourceObject: {fileID: 5684634973922906080, guid: bb67ae3035abce24aa87122c96acac22, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1144760742}
   m_SourcePrefab: {fileID: 100100000, guid: bb67ae3035abce24aa87122c96acac22, type: 3}
 --- !u!1 &21498510
 GameObject:
@@ -27893,8 +27896,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Seek out the three keys to access The Lost Tower, taking the initial steps
-    toward unraveling the secrets of The Soulless Forest...
+  m_text: Hunt down the three elusive Magic Stones, each possessing ancient enchantments.
+    These stones hold the power to dislodge the  rock obstructing the passage inside
+    the Lost Tower...
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ff0f4e65186c6bd469d2d422b6e090f3, type: 2}
   m_sharedMaterial: {fileID: -838892363219276170, guid: ff0f4e65186c6bd469d2d422b6e090f3, type: 2}
@@ -36872,8 +36876,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.00012207031, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: -40, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1048594155
 MonoBehaviour:
@@ -36895,13 +36899,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Are you intent on unraveling the mysteries of The Soulless Forest?
-
-
-    Those
-    who came before you, driven by the insatiable thirst for power, caught the attention
-    of these sentient trees, the venomous flora, and the dark moss that blankets
-    every stone, forming the sole ecosystem of dark magic in our world.'
+  m_text: "You have proven your worthiness to the forest, and as a result, you have
+    been bestowed with the mighty Sword of the Lost Souls. \nThis blade was once
+    wielded by an ambitious warrior whose very soul became entwined within the depths
+    of this forest during his relentless quest for greater power... [Use the sword
+    (Ctrl)]"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ff0f4e65186c6bd469d2d422b6e090f3, type: 2}
   m_sharedMaterial: {fileID: -838892363219276170, guid: ff0f4e65186c6bd469d2d422b6e090f3, type: 2}
@@ -37081,7 +37083,7 @@ GameObject:
   - component: {fileID: 1134958430}
   - component: {fileID: 1134958429}
   m_Layer: 5
-  m_Name: Image_ForestBackground
+  m_Name: Image_SwordBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37104,7 +37106,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1402.61, y: 863}
+  m_AnchoredPosition: {x: -1402.61, y: 913}
   m_SizeDelta: {x: 1300, y: 650}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1134958429
@@ -37159,11 +37161,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8281798183665960243, guid: 51cb12c48f366db419ccf660f1861a95, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.77
+      value: 8.56
       objectReference: {fileID: 0}
     - target: {fileID: 8281798183665960243, guid: 51cb12c48f366db419ccf660f1861a95, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.23
+      value: -0.08
       objectReference: {fileID: 0}
     - target: {fileID: 8281798183665960243, guid: 51cb12c48f366db419ccf660f1861a95, type: 3}
       propertyPath: m_LocalPosition.z
@@ -37219,6 +37221,102 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78b2694e1b788544981bfb0d8f7b7b02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!82 &1144760742
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 548999924}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: a41c62871e7bfd6429d8c7427a4611a2, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.02
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1152531884
 GameObject:
   m_ObjectHideFlags: 0
@@ -38732,7 +38830,7 @@ Transform:
   m_GameObject: {fileID: 1540346785}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.35, y: -0.12, z: 0}
+  m_LocalPosition: {x: -9.26, y: -0.12, z: 0}
   m_LocalScale: {x: -0.9, y: 0.9, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -39317,7 +39415,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.07, y: 1.421875}
+  m_Offset: {x: -0.07, y: 2.45}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.56458426, y: 0}
@@ -39328,7 +39426,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.07, y: 2.84375}
+  m_Size: {x: 2.07, y: 4.91}
   m_EdgeRadius: 0
 --- !u!1 &1590895419
 GameObject:
@@ -39584,7 +39682,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -1402.61, y: 388}
-  m_SizeDelta: {x: 1300, y: 300}
+  m_SizeDelta: {x: 1300, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1629068183
 MonoBehaviour:
@@ -40534,7 +40632,7 @@ Transform:
   m_GameObject: {fileID: 1925897246}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.46, z: 3}
+  m_LocalPosition: {x: 0, y: 3.46, z: 2.9}
   m_LocalScale: {x: 1, y: 1.93, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -40717,7 +40815,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -1598, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1986777369
