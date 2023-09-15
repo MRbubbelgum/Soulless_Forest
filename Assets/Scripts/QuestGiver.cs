@@ -83,7 +83,7 @@ public class QuestGiver : MonoBehaviour
     {
         if (other.CompareTag("MainCharacter"))
         {
-            Invoke("WaitUntilInactive", 8f);
+            Invoke("WaitUntilInactive", 3f);
         }
     }
 
