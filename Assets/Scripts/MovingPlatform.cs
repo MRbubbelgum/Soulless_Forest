@@ -7,13 +7,17 @@ public class MovingPlatform : MonoBehaviour
     [SerializeField] private Transform target1, target2;
     [SerializeField] private float moveSpeed = 2f;
 
+
+
+
     private Transform currentTarget;
+
     void Start()
     {
         currentTarget = target1;
+    
     }
 
-    
     void FixedUpdate()
     {
         if (transform.position == target1.position)
@@ -27,9 +31,9 @@ public class MovingPlatform : MonoBehaviour
         transform.position = Vector2.MoveTowards(transform.position, currentTarget.position, moveSpeed * Time.deltaTime);
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
+   private void OnCollisionEnter2D(Collision2D other)
     {
-        if(other.gameObject.CompareTag("MainCharacter") && other.transform.position.y > transform.position.y)
+        if (other.gameObject.CompareTag("MainCharacter") && other.transform.position.y > transform.position.y)
         {
             other.transform.SetParent(transform);
         }
@@ -38,6 +42,7 @@ public class MovingPlatform : MonoBehaviour
     {
         if (other.gameObject.CompareTag("MainCharacter"))
         {
+     
             other.transform.SetParent(null);
         }
     }

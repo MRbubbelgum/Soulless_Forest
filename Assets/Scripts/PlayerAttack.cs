@@ -26,33 +26,33 @@ public class PlayerAttack : MonoBehaviour
 {
         
         if (timeBtwAttack <= 0)
-    {
-            
-        if (Input.GetKeyDown(KeyCode.LeftControl))
         {
-            anim.SetTrigger("AttackTrigger");
-            Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatIsEnemies);
-                foreach (Collider2D enemyCollider in enemiesToDamage)
-                {
-                    if (enemyCollider.CompareTag("EnemyMushroom") && !hasHitEnemy)
+            
+            if (Input.GetKeyDown(KeyCode.LeftControl))
+            {
+                anim.SetTrigger("AttackTrigger");
+                Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatIsEnemies);
+                    foreach (Collider2D enemyCollider in enemiesToDamage)
                     {
-
-                        EnemyMushroom enemy = enemyCollider.GetComponent<EnemyMushroom>();
-                        if (enemy != null)
+                        if (enemyCollider.CompareTag("Enemy") && !hasHitEnemy)
                         {
-                            enemy.TakeDamageEnemy(damage);
-                            hasHitEnemy = true;
+
+                            EnemySkeleton enemy = enemyCollider.GetComponent<EnemySkeleton>();
+                            if (enemy != null)
+                            {
+                                enemy.TakeDamageEnemy(damage);
+                                hasHitEnemy = true;
+                            }
                         }
                     }
-                }
-            // Reset the attack cooldown timer immediately after triggering the attack
-            timeBtwAttack = startTimeBtwAttack;
+                // Reset the attack cooldown timer immediately after triggering the attack
+                timeBtwAttack = startTimeBtwAttack;
+            }
         }
-    }
-    else
-    {
-        timeBtwAttack -= Time.deltaTime;
-    }
+        else
+        {
+            timeBtwAttack -= Time.deltaTime;
+        }
         if (anim.GetCurrentAnimatorStateInfo(0).IsName("IsAttacking"))
         {
             hasHitEnemy = false;

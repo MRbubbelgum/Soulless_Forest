@@ -1,13 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-/*
+
 public class Attack_DashAttack : MonoBehaviour
 {
-       
+   
+    /*
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody2D>();
+       
     }
  
     void Update()
@@ -25,21 +27,21 @@ public class Attack_DashAttack : MonoBehaviour
                 nextAttackTime = Time.time + 1f / attackRate;
                 nextDashAttackTime = Time.time + 1f / attackRate;
 
-                if (mainCharacterScript.m_Grounded == true)
+                if (playerMovement.CheckIfGrounded() == true)
                 {
-                    playerMovementScript.runSpeed = 0f;
+                    playerMovement.runSpeed = 0f;
                 }
 
                 while (Time.time >= nextAttackTime)
                 {
-                    playerMovementScript.runSpeed = 0;
+                    playerMovement.runSpeed = 0;
                 }
 
             }
         }
         if (Time.time >= nextDashAttackTime)
         {
-            if ((mainCharacterScript.m_Grounded == true && !animator.GetBool("IsCrouching") && playerMovementScript.crouch == false && playerMovementScript.jump == false && !animator.GetBool("IsJumping")))
+            if ((playerMovement.CheckIfGrounded() == true && !animator.GetBool("IsCrouching") && !animator.GetBool("IsJumping")))
             {
                 if ((Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.D) && Input.GetKeyDown(KeyCode.Mouse1)))
                 {
@@ -48,7 +50,7 @@ public class Attack_DashAttack : MonoBehaviour
                 else if ((Input.GetKey(KeyCode.A) && Input.GetKeyDown(KeyCode.Mouse1)) || (Input.GetKey(KeyCode.D) && (Input.GetKeyDown(KeyCode.Mouse1))))
                 {
                     animator.SetTrigger("IsDashAttacking");
-                    playerMovementScript.runSpeed = 0f;
+                    playerMovement.runSpeed = 0f;
 
                     nextDashAttackTime = Time.time + 1f / dashAttackRate;
                     nextAttackTime = Time.time + 2f / attackRate;
@@ -75,7 +77,7 @@ public class Attack_DashAttack : MonoBehaviour
         IsAttacking = false;
         if (!IsAttacking)
         {
-            playerMovementScript.runSpeed = 8f;
+            playerMovement.runSpeed = 8f;
         }
     }
 
@@ -132,9 +134,9 @@ public class Attack_DashAttack : MonoBehaviour
     public void EndDashAttack()
     {
         IsDashAttacking = false;
-        if (!IsDashAttacking && playerMovementScript.runSpeed == 0f)
+        if (!IsDashAttacking && playerMovement.runSpeed == 0f)
         {
-            playerMovementScript.runSpeed = 8f;
+            playerMovement.runSpeed = 8f;
         }
 
 
@@ -151,6 +153,6 @@ public class Attack_DashAttack : MonoBehaviour
         if (attackPoint == null)
             return;
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
-    }
+    }*/
 }
-       */
+      

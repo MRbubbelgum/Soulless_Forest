@@ -78,9 +78,9 @@ public class EnemyMushroom : MonoBehaviour
         if(other.CompareTag("MainCharacter"))
         {
             audioSource.PlayOneShot(mushroomDeathSound, 0.35f);
-            /*other.GetComponent<Rigidbody2D>().velocity = new Vector2(other.GetComponent<Rigidbody2D>().velocity.x, 0);
+            other.GetComponent<Rigidbody2D>().velocity = new Vector2(other.GetComponent<Rigidbody2D>().velocity.x, 0);
             other.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, bounciness));
-            other.GetComponent<PlayerMovement>().runSpeed = 15f;*/
+            other.GetComponent<PlayerMovement>().runSpeed = 15f;
             animator.SetBool("IsDead", true);
             
             rb.gravityScale = 0;

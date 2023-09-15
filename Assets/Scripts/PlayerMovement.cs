@@ -50,7 +50,7 @@ public class PlayerMovement : MonoBehaviour
         keyTextUpdate.text = "" + keysCollected;
         capsuleCollider = GetComponent<CapsuleCollider2D>();
         transform.position = spawnPosition.position;
-       
+ 
     }
 
     private void Update()
@@ -60,11 +60,11 @@ public class PlayerMovement : MonoBehaviour
             horizontalValue = Input.GetAxisRaw("Horizontal");
             if (horizontalValue < 0)
             {
-                transform.localScale = new Vector3(-2, 2, 2);
+                transform.localScale = new Vector3(-2, transform.localScale.y, transform.localScale.z);
             }
             if (horizontalValue > 0)
             {
-                transform.localScale = new Vector3(2, 2, 2);
+                transform.localScale = new Vector3(2, transform.localScale.y, transform.localScale.z);
             }
         }
         
@@ -271,7 +271,7 @@ public class PlayerMovement : MonoBehaviour
         
 
     }
-    private bool CheckIfGrounded()
+    public bool CheckIfGrounded()
     {
         RaycastHit2D leftHit = Physics2D.Raycast(leftFoot.position, Vector2.down, rayDistance, whatIsGround);
         RaycastHit2D rightHit = Physics2D.Raycast(rightFoot.position, Vector2.down, rayDistance, whatIsGround);

@@ -80,9 +80,16 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0
-    functionName: EnemyGetColor
+    functionName: CannotWalk
     data: 
-    objectReferenceParameter: {fileID: 11500000, guid: 15ba5d6c585398544a2b4a5e385cfc7e, type: 3}
+    objectReferenceParameter: {fileID: 11500000, guid: ee14e4ed2ebfa914d9b96d7181a29c40, type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.25
+    functionName: DisableScript
+    data: 
+    objectReferenceParameter: {fileID: 11500000, guid: ee14e4ed2ebfa914d9b96d7181a29c40, type: 3}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
