@@ -261,15 +261,13 @@ public class PlayerMovement : MonoBehaviour
     public void StartHurting()
     {
         CantMove();
+        rb.velocity = new Vector2(0, rb.velocity.y);
         animator.SetBool("IsHurting", true);
     }
     public void StopHurting()
     {
         CanMoveAgain();
         animator.SetBool("IsHurting", false);
-        
-        
-
     }
     public bool CheckIfGrounded()
     {

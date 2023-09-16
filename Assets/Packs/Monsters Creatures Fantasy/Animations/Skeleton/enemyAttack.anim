@@ -95,16 +95,16 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0.5
-    functionName: EnemyAttack
+    functionName: SkeletonAttack
     data: 
-    objectReferenceParameter: {fileID: 11500000, guid: 15ba5d6c585398544a2b4a5e385cfc7e, type: 3}
+    objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 0.6666667
-    functionName: EndEnemyAttack
+    functionName: StopSkeletonAttack
     data: 
-    objectReferenceParameter: {fileID: 11500000, guid: 15ba5d6c585398544a2b4a5e385cfc7e, type: 3}
+    objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0

@@ -259,6 +259,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5050180713383984988}
   - component: {fileID: 6659175844133058723}
+  - component: {fileID: 7890543704497646022}
   m_Layer: 10
   m_Name: AttackTrigger
   m_TagString: Untagged
@@ -316,6 +317,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.15}
   serializedVersion: 2
   m_Radius: 0.34
+--- !u!114 &7890543704497646022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4012559764920518572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d22d9b8d00ab21444b496f2deb823f93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCharacterInTrigger: 0
 --- !u!1 &4709786066774047813
 GameObject:
   m_ObjectHideFlags: 0
@@ -607,7 +621,7 @@ Transform:
   m_GameObject: {fileID: 6269156916344296211}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.3, y: 0, z: 0}
+  m_LocalPosition: {x: 0.35, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -675,7 +689,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0.5}
-  m_LocalScale: {x: -1.5, y: 1.5, z: 1}
+  m_LocalScale: {x: -1.4, y: 1.4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7527889838723534983}
@@ -846,3 +860,11 @@ MonoBehaviour:
   border: {fileID: 1609040024527012930}
   skeletonHealthSlider: {fileID: 5995557828349178046}
   maxHealth: 100
+  startTimeBtwAttack: 0
+  attackPos: {fileID: 3791123513765009001}
+  whatIsPlayer:
+    serializedVersion: 2
+    m_Bits: 8
+  attackRange: 0
+  damage: 0
+  skeletonAttackTrigger: {fileID: 7890543704497646022}
