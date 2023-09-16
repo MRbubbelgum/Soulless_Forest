@@ -35,7 +35,7 @@ public class MovingPlatform : MonoBehaviour
     {
         if (other.gameObject.CompareTag("MainCharacter") && other.transform.position.y > transform.position.y)
         {
-            other.transform.SetParent(transform);
+            //other.transform.SetParent(transform);
         }
     }
     private void OnCollisionExit2D(Collision2D other)
@@ -43,7 +43,7 @@ public class MovingPlatform : MonoBehaviour
         if (other.gameObject.CompareTag("MainCharacter"))
         {
      
-            other.transform.SetParent(null);
+           // other.transform.SetParent(null);
         }
     }
 }
