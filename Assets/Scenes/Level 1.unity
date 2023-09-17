@@ -520,6 +520,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2935715224638617018, guid: 5225c444438253542a23ebed6cb9911c, type: 3}
+      propertyPath: health
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4778106807910192742, guid: 5225c444438253542a23ebed6cb9911c, type: 3}
       propertyPath: m_Name
       value: EnemyMushroom 3
@@ -25520,6 +25524,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2935715224638617018, guid: 5225c444438253542a23ebed6cb9911c, type: 3}
+      propertyPath: health
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4778106807910192742, guid: 5225c444438253542a23ebed6cb9911c, type: 3}
       propertyPath: m_Name
       value: EnemyMushroom
@@ -26386,6 +26394,10 @@ PrefabInstance:
     - target: {fileID: 2045996118736692782, guid: 5225c444438253542a23ebed6cb9911c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2935715224638617018, guid: 5225c444438253542a23ebed6cb9911c, type: 3}
+      propertyPath: health
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4778106807910192742, guid: 5225c444438253542a23ebed6cb9911c, type: 3}
       propertyPath: m_Name
@@ -39916,6 +39928,10 @@ PrefabInstance:
     - target: {fileID: 2045996118736692782, guid: 5225c444438253542a23ebed6cb9911c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2935715224638617018, guid: 5225c444438253542a23ebed6cb9911c, type: 3}
+      propertyPath: health
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4778106807910192742, guid: 5225c444438253542a23ebed6cb9911c, type: 3}
       propertyPath: m_Name
