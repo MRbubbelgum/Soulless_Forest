@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class Door : MonoBehaviour
 {
     [SerializeField] private GameObject exitText;
+    [SerializeField] private string sceneToLoad;
     private GameObject lever;
     private AudioSource audioSource;
     
@@ -28,7 +29,7 @@ public class Door : MonoBehaviour
         if(other.CompareTag("MainCharacter") && Input.GetKey(KeyCode.E) && lever.GetComponent<Lever>().hasPulledLever == true)
         {
             audioSource.Play();
-            SceneManager.LoadScene("Level 2");
+            SceneManager.LoadScene(sceneToLoad);
         }
     }
     private void OnTriggerExit2D(Collider2D other)

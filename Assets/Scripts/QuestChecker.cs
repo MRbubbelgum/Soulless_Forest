@@ -7,7 +7,7 @@ public class QuestChecker : MonoBehaviour
 {
     [SerializeField] private GameObject doorTextBox, finishedText, unfinishedText;
     [SerializeField] private int keysAmount;
-    [SerializeField] private int levelToLoad;
+    [SerializeField] private string sceneToLoad; 
     [SerializeField] private GameObject Ebutton;
     [SerializeField] private GameObject enterTowerText;
 
@@ -54,7 +54,7 @@ public class QuestChecker : MonoBehaviour
     }
     private void LoadNextLevel()
     {
-        SceneManager.LoadScene("Tower");
+        SceneManager.LoadScene(sceneToLoad);
     }
     private void OnTriggerExit2D(Collider2D other)
     {

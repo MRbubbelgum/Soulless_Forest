@@ -1200,7 +1200,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1246516551
-  m_SortingLayer: 1
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -25411,7 +25411,7 @@ MonoBehaviour:
   finishedText: {fileID: 1590895419}
   unfinishedText: {fileID: 50880514}
   keysAmount: 3
-  levelToLoad: 2
+  sceneToLoad: TowerScene_2
   Ebutton: {fileID: 1812075234}
   enterTowerText: {fileID: 629061311}
 --- !u!1 &362774518
