@@ -516,6 +516,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2935715224638617018, guid: 5225c444438253542a23ebed6cb9911c, type: 3}
+      propertyPath: health
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4778106807910192742, guid: 5225c444438253542a23ebed6cb9911c, type: 3}
       propertyPath: m_Name
       value: EnemyMushroom 3
@@ -26553,6 +26557,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2935715224638617018, guid: 5225c444438253542a23ebed6cb9911c, type: 3}
+      propertyPath: health
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4778106807910192742, guid: 5225c444438253542a23ebed6cb9911c, type: 3}
       propertyPath: m_Name
       value: EnemyMushroom 4
@@ -39946,6 +39954,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2935715224638617018, guid: 5225c444438253542a23ebed6cb9911c, type: 3}
+      propertyPath: health
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4778106807910192742, guid: 5225c444438253542a23ebed6cb9911c, type: 3}
       propertyPath: m_Name
       value: EnemyMushroom 2
@@ -40333,7 +40345,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1859346777
 Transform:
   m_ObjectHideFlags: 0
