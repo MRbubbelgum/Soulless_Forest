@@ -5,11 +5,16 @@ using UnityEngine;
 public class PassageBlock : MonoBehaviour
 {
     [SerializeField] private GameObject passageBlockText;
+    public bool canPressE = false;
+    public bool stoneIsRemoved = false;
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.CompareTag("MainCharacter"))
+        if(other.CompareTag("MainCharacter") && stoneIsRemoved == false)
         {
             passageBlockText.SetActive(true);
+            canPressE = true;
+            Debug.Log("canpress E är true");
+            
             CancelInvoke("WaitUntilRemoveText");
         }
     }
@@ -23,5 +28,6 @@ public class PassageBlock : MonoBehaviour
     private void WaitUntilRemoveText()
     {
         passageBlockText.SetActive(false);
+        canPressE = false;
     }
 }
