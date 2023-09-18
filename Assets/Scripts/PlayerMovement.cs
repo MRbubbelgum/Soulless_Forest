@@ -220,7 +220,8 @@ public class PlayerMovement : MonoBehaviour
          heart.color = Color.white;
          currentHealth = startingHealth;
          UpdateHealthBar(); */
-        SceneManager.LoadScene(1);
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(currentSceneName);
     }
 
     public void RestoreHealth(GameObject cherry)

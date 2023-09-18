@@ -11,6 +11,11 @@ public class EnemySkeleton : MonoBehaviour
     [SerializeField] private Image fill;
     [SerializeField] private Image border;
     [SerializeField] private Slider skeletonHealthSlider;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioSource audioSource2;
+    [SerializeField] private AudioClip skeletonDeathSound;
+    [SerializeField] private AudioClip[] skeletonDamageSounds;
+
 
     private float horizontalValue;
     private Rigidbody2D rb;
@@ -138,7 +143,7 @@ public class EnemySkeleton : MonoBehaviour
     private void SetColorInvisible()
     {
         Color currentColor = spriteRenderer.color;
-        currentColor.a = 0.2f;
+        currentColor.a = 0.1f;
         spriteRenderer.color = currentColor;
     }
     private void SetImageAlphaFill(float alphaValueFill)
@@ -176,6 +181,9 @@ public class EnemySkeleton : MonoBehaviour
     {
         currentHealth -= damage;
         UpdateEnemyHealthBar();
+        int randomValue = Random.Range(0, skeletonDamageSounds.Length);
+        AudioClip randomClip = skeletonDamageSounds[randomValue];
+        audioSource.PlayOneShot(skeletonDamageSounds[randomValue], 0.22f);
         animator.SetTrigger("Hurt");
         Debug.Log("Damage TAKEN!");
         if(currentHealth < maxHealth) 
@@ -194,6 +202,7 @@ public class EnemySkeleton : MonoBehaviour
         fill.enabled = false;
         border.enabled = false;
         animator.SetTrigger("IsDead");
+        audioSource2.PlayOneShot(skeletonDeathSound, 0.45f);
         canWalk = false;
         ResetVelocity();
         rb.gravityScale = 0;
