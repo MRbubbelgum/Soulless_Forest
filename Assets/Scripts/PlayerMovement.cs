@@ -155,9 +155,9 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitForSeconds(runningSoundCooldown);
         canPlayRunningSound = true; 
     }
-    public void TakeDamage(int damageAmount)
+    public void TakeDamage(int damage)
     {
-        currentHealth -= damageAmount;
+        currentHealth -= damage;
         UpdateHealthBar();
         animator.SetTrigger("Hurt");
         
