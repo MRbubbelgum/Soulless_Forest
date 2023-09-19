@@ -47658,7 +47658,7 @@ MonoBehaviour:
     the forest shall now subject you to a true test of your abilities. \nFrom the
     heart of the forest emerge creatures considerably more formidable than the soulless
     mushrooms, demanding alternative methods for their defeat... \n[Use the sword
-    (Ctrl)]"
+    (Mouse0)]"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ff0f4e65186c6bd469d2d422b6e090f3, type: 2}
   m_sharedMaterial: {fileID: -838892363219276170, guid: ff0f4e65186c6bd469d2d422b6e090f3, type: 2}
@@ -49830,8 +49830,8 @@ MonoBehaviour:
   audioSource1: {fileID: 1540346791}
   audioSource2: {fileID: 1540346792}
   hmmSound: {fileID: 8300000, guid: 427286412f1328c41b83473e6105cd64, type: 3}
-  questDetailsSound: {fileID: 8300000, guid: 663ef273ce67ee74480fed5fc8219d57, type: 3}
-  forestStoryAndQuestDetailsSound: {fileID: 8300000, guid: 031b8867470003d4f83d2b84cb0ef9b5, type: 3}
+  questDetailsSound: {fileID: 8300000, guid: d74966f76f53ac84d9b245b9d2ef3fde, type: 3}
+  forestStoryAndQuestDetailsSound: {fileID: 8300000, guid: 2c5db9e5663512340a89afcbde396fb1, type: 3}
 --- !u!61 &1540346790
 BoxCollider2D:
   m_ObjectHideFlags: 0

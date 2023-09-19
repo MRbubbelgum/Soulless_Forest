@@ -30,7 +30,7 @@ public class PlayerAttack : MonoBehaviour
             if (timeBtwAttack <= 0)
             {
             
-                if (Input.GetKeyDown(KeyCode.LeftControl))
+                if (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.LeftControl))
                 {
                     GetComponent<PlayerMovement>().CantMove();
                     ResetVelocity();
