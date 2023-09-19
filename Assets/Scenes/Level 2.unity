@@ -53945,7 +53945,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target1: {fileID: 3308847204769349509}
   target2: {fileID: 6408133656784196984}
-  moveSpeed: 1.5
+  moveSpeed: 1
 --- !u!251 &8595515679376792753
 PlatformEffector2D:
   m_ObjectHideFlags: 0
