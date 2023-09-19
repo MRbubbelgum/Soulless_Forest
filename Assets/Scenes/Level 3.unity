@@ -81440,8 +81440,8 @@ MonoBehaviour:
   audioSource1: {fileID: 1540346791}
   audioSource2: {fileID: 1540346792}
   hmmSound: {fileID: 8300000, guid: 427286412f1328c41b83473e6105cd64, type: 3}
-  questDetailsSound: {fileID: 8300000, guid: 663ef273ce67ee74480fed5fc8219d57, type: 3}
-  forestStoryAndQuestDetailsSound: {fileID: 8300000, guid: 031b8867470003d4f83d2b84cb0ef9b5, type: 3}
+  questDetailsSound: {fileID: 8300000, guid: aa57071fe6398ce439a5eb38141da50d, type: 3}
+  forestStoryAndQuestDetailsSound: {fileID: 8300000, guid: 4cd0888d90bf6284e802e401ec4eddcc, type: 3}
 --- !u!61 &1540346790
 BoxCollider2D:
   m_ObjectHideFlags: 0
