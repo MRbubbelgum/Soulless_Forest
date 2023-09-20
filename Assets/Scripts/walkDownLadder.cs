@@ -15,7 +15,7 @@ public class walkDownLadder : MonoBehaviour
     {
         if (other.CompareTag("MainCharacter"))
         {
-            Invoke("LadderTextActive", 2f);
+            Invoke("LadderTextActive", 0.5f);
             mainCharacterIsInsideTrigger = true;
         }
     }
@@ -26,6 +26,7 @@ public class walkDownLadder : MonoBehaviour
             walkDownLadderText.SetActive(false);
             ladderTextIsActive = false;
             mainCharacterIsInsideTrigger = false;
+            CancelInvoke("LadderTextActive");
         }
     }
     private void Update()
