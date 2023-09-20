@@ -83725,6 +83725,7 @@ GameObject:
   - component: {fileID: 2057816289}
   - component: {fileID: 2057816288}
   - component: {fileID: 2057816290}
+  - component: {fileID: 2057816291}
   m_Layer: 0
   m_Name: TX Village Props - Stone of Recall - Glow
   m_TagString: Untagged
@@ -83831,10 +83832,10 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 62e9780ee049df34c983d12b4994dfef, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -83925,6 +83926,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2057816291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2057816286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 466cae6954f6c984b8ac65345209d9cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2073789387
 GameObject:
   m_ObjectHideFlags: 0
