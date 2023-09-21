@@ -142,7 +142,7 @@ public class PlayerMovement : MonoBehaviour
     {
         int randomValue = Random.Range(0, jumpGrassSounds.Length);
         audioSource.pitch = Random.Range(2.7f, 2.9f);
-        
+        canMove = true;
         audioSource.PlayOneShot(jumpGrassSounds[randomValue], 0.3f);
         Instantiate(dustParticles, transform.position, Quaternion.identity);
         rb.AddForce(new Vector2(0, jumpForce));

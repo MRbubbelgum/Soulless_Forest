@@ -18,7 +18,7 @@ public class WalkUpLadder : MonoBehaviour
     {
         if (other.CompareTag("MainCharacter") && passageBlock.stoneIsRemoved == true)
         {
-            SetLadderTextActive();
+            Invoke("SetLadderTextActive", 0.5f);
         }
     }
     private void OnTriggerStay2D(Collider2D other)
@@ -44,6 +44,7 @@ public class WalkUpLadder : MonoBehaviour
         {
             SetLadderTextInactive();
             mainCharacterIsInsideTrigger = false;
+            CancelInvoke("SetLadderTextActive");
         }
     }
     private void ClimbLadder()
