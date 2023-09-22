@@ -1,16 +1,16 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEditor.PlayerSettings;
 
 public class BossShoot : MonoBehaviour
 {
     public GameObject bullet;
     public Transform bulletPos;
     private GameObject player;
+    [SerializeField] private LayerMask attackMask;
     private float timer;
-    private Animator anim;
+    public float attackRange = 1.0f;
+    public int attackDamage = 20;
+    
 
     void Start()
     {
@@ -31,16 +31,20 @@ public class BossShoot : MonoBehaviour
             if (timer > 2)
             {
                 timer = 0;
-                shoot();
+                Shoot();
                 
             }
         }
         
     }
-    public void shoot()
+    public void Shoot()
     {
-        Instantiate(bullet, bulletPos.position, Quaternion.identity);
-        //anim.SetTrigger("Shoot");
-    }
+        GameObject newBullet = Instantiate(bullet, bulletPos.position, Quaternion.identity);
 
+        Collider2D colInfo = Physics2D.OverlapCircle(newBullet.transform.position, attackRange, attackMask);
+        if (colInfo != null)
+        {
+            colInfo.GetComponent<PlayerMovement>().TakeDamage(attackDamage);
+        }
+    }
 }

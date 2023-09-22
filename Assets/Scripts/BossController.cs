@@ -34,7 +34,7 @@ public class BossController : MonoBehaviour
             // Use ranged attack when player is far away
             if (Time.time - lastAttackTime >= attackCooldown)
             {
-                bossShoot.shoot();
+                bossShoot.Shoot();
                 lastAttackTime = Time.time;
             }
         }

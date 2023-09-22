@@ -621,6 +621,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainCharacter
       objectReference: {fileID: 0}
+    - target: {fileID: 4493058784470351146, guid: f529a25a2ccf7da489cfa0249b33b455, type: 3}
+      propertyPath: m_LayerOverridePriority
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5873424043491249147, guid: f529a25a2ccf7da489cfa0249b33b455, type: 3}
       propertyPath: rb
       value: 
@@ -2822,10 +2826,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startTimeBtwAttack: 0.5
   originalAttackPosX: 0
-  attackPos: {fileID: 0}
+  attackPos: {fileID: 1662790045}
   whatIsEnemies:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1024
   attackRange: 0.35
   damage: 35
 --- !u!95 &1377818088 stripped
@@ -3146,7 +3150,7 @@ GameObject:
   - component: {fileID: 1872128169}
   - component: {fileID: 1872128170}
   - component: {fileID: 1872128171}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Boss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3274,7 +3278,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.005634308, y: -0.05199957}
+  m_Offset: {x: 0.019260406, y: -0.05199957}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -3285,7 +3289,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.4406586, y: 1.5868502}
+  m_Size: {x: 1.5153503, y: 1.5868502}
   m_EdgeRadius: 0
 --- !u!50 &1872128167
 Rigidbody2D:
@@ -3341,8 +3345,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackDamage: 20
-  attackOffset: {x: -0.75, y: -0.34, z: 0}
-  attackRange: 1
+  attackOffset: {x: -0.55, y: -0.29, z: 0}
+  attackRange: 0.21
   attackMask:
     serializedVersion: 2
     m_Bits: 8
@@ -3360,6 +3364,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 1720295729388524169, guid: 8833116158732f542b648ec3da40263b, type: 3}
   bulletPos: {fileID: 1778588553}
+  attackMask:
+    serializedVersion: 2
+    m_Bits: 8
+  attackRange: 1
+  attackDamage: 20
 --- !u!114 &1872128171
 MonoBehaviour:
   m_ObjectHideFlags: 0

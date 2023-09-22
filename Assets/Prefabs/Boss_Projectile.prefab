@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 6803918699749702943}
   - component: {fileID: 5889834062269506363}
   - component: {fileID: 486644099900449529}
-  - component: {fileID: 3762656784578974191}
   - component: {fileID: 4865265103676947075}
+  - component: {fileID: -4401951603569990808}
   m_Layer: 0
   m_Name: Boss_Projectile
   m_TagString: Untagged
@@ -114,8 +114,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!70 &3762656784578974191
-CapsuleCollider2D:
+--- !u!114 &4865265103676947075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1720295729388524169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11c8ffadaa365f94c86aa5db68ff6a2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  force: 5
+--- !u!58 &-4401951603569990808
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -146,19 +159,6 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.2839677, y: 0.6257096}
-  m_Size: {x: 0.29423913, y: 0.088335045}
-  m_Direction: 1
---- !u!114 &4865265103676947075
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1720295729388524169}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11c8ffadaa365f94c86aa5db68ff6a2d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  force: 5
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.06646609
