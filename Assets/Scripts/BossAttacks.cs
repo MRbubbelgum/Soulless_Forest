@@ -7,7 +7,7 @@ public class BossAttacks : MonoBehaviour
 	public int attackDamage = 20;
 
     public Vector3 attackOffset;
-    public float attackRange = 1f;
+    public float attackRange = 0.5f;
     public LayerMask attackMask;
 
     public void Attack()
