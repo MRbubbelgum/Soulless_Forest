@@ -80304,7 +80304,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e368f24feb268d34cad46349f6204f5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: BossFight
+  sceneToLoad: NEWBossFight
 --- !u!1 &1194792504
 GameObject:
   m_ObjectHideFlags: 0

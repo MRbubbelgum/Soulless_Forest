@@ -27,6 +27,9 @@ EditorBuildSettings:
     path: Assets/Scenes/BossFight.unity
     guid: d31b85e84610ea0458946102a4d0aeba
   - enabled: 1
+    path: Assets/Scenes/NEWBossFight.unity
+    guid: a992bd6ba35f8604f845b13d55ad268a
+  - enabled: 1
     path: "Assets/Scenes/SlutK\xE4rm.unity"
     guid: 30fa3a43423d0414080bd1285b83e1e6
   m_configObjects: {}
