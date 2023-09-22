@@ -27,6 +27,7 @@ public class EnemySkeleton : MonoBehaviour
     private bool isDead = false;
     private BoxCollider2D boxCollider2D;
     private SpriteRenderer spriteRenderer;
+    private PlayerMovement playerMovement;
 
     private float timeBtwAttack;
     public float startTimeBtwAttack;
@@ -45,6 +46,7 @@ public class EnemySkeleton : MonoBehaviour
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        playerMovement = mainCharacter.GetComponent<PlayerMovement>();
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         boxCollider2D = GetComponent<BoxCollider2D>();
@@ -86,7 +88,7 @@ public class EnemySkeleton : MonoBehaviour
         if (timeBtwAttack <= 0)
         {
 
-            if (skeletonAttackTrigger.mainCharacterInTrigger == true)
+            if (skeletonAttackTrigger.mainCharacterInTrigger == true && !playerMovement.mainCharacterIsDead)
             {
                 SetColorVisable();
                 CannotWalk();

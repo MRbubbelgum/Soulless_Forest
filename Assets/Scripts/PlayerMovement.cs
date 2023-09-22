@@ -31,9 +31,10 @@ public class PlayerMovement : MonoBehaviour
     public Animator animator;
     private int startingHealth = 100;
     public int currentHealth;
-    private CapsuleCollider2D capsuleCollider;
+    [SerializeField] CapsuleCollider2D capsuleCollider;
     public int keysCollected = 0;
     private bool canPlayRunningSound = true;
+    public bool mainCharacterIsDead = false;
     [SerializeField] private float runningSoundCooldown = 0.45f;
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioSource audioSource2;
@@ -179,7 +180,7 @@ public class PlayerMovement : MonoBehaviour
     }
     public void Death()
     {
-        
+        mainCharacterIsDead = true;
         CantMove();
         animator.SetBool("Death", true);
         if(CheckIfGrounded() == true)
@@ -190,6 +191,7 @@ public class PlayerMovement : MonoBehaviour
     }
     public void AfterDeath()
     {
+        capsuleCollider.enabled = false;
         rb.bodyType = RigidbodyType2D.Static;
         capsuleCollider.enabled = false;
         rb.velocity = new Vector2(0, 0);
