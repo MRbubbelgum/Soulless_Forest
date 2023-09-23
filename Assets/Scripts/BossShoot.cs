@@ -6,7 +6,7 @@ public class BossShoot : MonoBehaviour
     public GameObject bullet;
     public Transform bulletPos;
     private GameObject player;
-    [SerializeField] private LayerMask attackMask;
+    [SerializeField] public LayerMask attackMask;
     private float timer;
     public float attackRange = 1.0f;
     public int attackDamage = 20;

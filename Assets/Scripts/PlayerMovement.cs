@@ -41,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
 
     public BossShoot bossShoot;
 
-    void OnCollisionEnter2D(Collision2D collision)
+    /*void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Projectile")) // Check if collided with projectile
         {
@@ -52,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
 
             Destroy(collision.gameObject); // Destroy the projectile upon collision
         }
-    }
+    }*/
 
 
     void Start()
