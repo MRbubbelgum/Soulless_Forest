@@ -7,10 +7,20 @@ public class EndSceneControler : MonoBehaviour
 {
     public void StartGame()
     {
-        SceneManager.LoadScene(0);
+        Invoke("LodadMenu", 2.0f);
     }
 
     public void QuitGame()
+    {
+        Invoke("LoadQuit", 2.0f);
+    }
+
+    private void LodadMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+    private void LoadQuit()
     {
         Application.Quit();
     }
