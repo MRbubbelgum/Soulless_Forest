@@ -39,6 +39,20 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private AudioSource audioSource2;
     [SerializeField] private AudioSource audioSource3;
 
+    public BossShoot bossShoot;
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Projectile")) // Check if collided with projectile
+        {
+            Debug.Log("Projectile hit player!"); // Debug message to verify the hit
+
+            int damage = bossShoot.attackDamage; // Access attackDamage from bossShoot
+            TakeDamage(damage); // Apply damage when colliding with a projectile
+
+            Destroy(collision.gameObject); // Destroy the projectile upon collision
+        }
+    }
 
 
     void Start()

@@ -638,6 +638,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1377818088}
     - target: {fileID: 5873424043491249147, guid: f529a25a2ccf7da489cfa0249b33b455, type: 3}
+      propertyPath: bossShoot
+      value: 
+      objectReference: {fileID: 1872128170}
+    - target: {fileID: 5873424043491249147, guid: f529a25a2ccf7da489cfa0249b33b455, type: 3}
       propertyPath: fillColor
       value: 
       objectReference: {fileID: 0}
@@ -3366,7 +3370,7 @@ MonoBehaviour:
   bulletPos: {fileID: 1778588553}
   attackMask:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 4294967295
   attackRange: 1
   attackDamage: 20
 --- !u!114 &1872128171

@@ -24,7 +24,7 @@ public class BossShoot : MonoBehaviour
         
 
         float distance = Vector2.Distance(transform.position, player.transform.position);
-        Debug.Log(distance);
+        
         if(distance > 2.5 ||  distance < 1.5)
         {
             timer += Time.deltaTime;
@@ -41,10 +41,6 @@ public class BossShoot : MonoBehaviour
     {
         GameObject newBullet = Instantiate(bullet, bulletPos.position, Quaternion.identity);
 
-        Collider2D colInfo = Physics2D.OverlapCircle(newBullet.transform.position, attackRange, attackMask);
-        if (colInfo != null)
-        {
-            colInfo.GetComponent<PlayerMovement>().TakeDamage(attackDamage);
-        }
+        
     }
 }
