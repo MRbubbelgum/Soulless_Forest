@@ -38163,6 +38163,10 @@ PrefabInstance:
       propertyPath: runGrassSound
       value: 
       objectReference: {fileID: 8300000, guid: 92984b4e4fe588240b6e91ec1b1c460e, type: 3}
+    - target: {fileID: 5873424043491249147, guid: f529a25a2ccf7da489cfa0249b33b455, type: 3}
+      propertyPath: spawnPosition
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6272503213803689089, guid: f529a25a2ccf7da489cfa0249b33b455, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.53
@@ -63942,6 +63946,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   passageBlockText: {fileID: 423789788}
+  canPressE: 0
+  stoneIsRemoved: 0
 --- !u!61 &2128672938
 BoxCollider2D:
   m_ObjectHideFlags: 0
