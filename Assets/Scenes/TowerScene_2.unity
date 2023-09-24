@@ -27509,6 +27509,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   exitText: {fileID: 1727970820}
   sceneToLoad: Level 3
+  doorSound: {fileID: 8300000, guid: 63afb62300f670c4089bc8d0098123e5, type: 3}
 --- !u!61 &316775943
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -41023,7 +41024,7 @@ MonoBehaviour:
   walkDownLadderText: {fileID: 19679718}
   mainCharacter: {fileID: 1321737368}
   lowerLadderSpawn: {fileID: 1814922518}
-  ladderSound: {fileID: 8300000, guid: d977642825f5fe74a8588e40e7c69b92, type: 3}
+  ladderSound: {fileID: 8300000, guid: 86e8ccc9fc5946f458e144ba0f24e84f, type: 3}
 --- !u!61 &925693566
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -76164,7 +76165,7 @@ MonoBehaviour:
   walkUpLadderText: {fileID: 359357962}
   mainCharacter: {fileID: 1321737368}
   upperLadderSpawn: {fileID: 457309524}
-  ladderSound: {fileID: 8300000, guid: d977642825f5fe74a8588e40e7c69b92, type: 3}
+  ladderSound: {fileID: 8300000, guid: 79365500957ab5f4eb0f372d528197e4, type: 3}
 --- !u!82 &2128672941
 AudioSource:
   m_ObjectHideFlags: 0

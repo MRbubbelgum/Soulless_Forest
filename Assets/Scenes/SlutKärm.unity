@@ -706,7 +706,7 @@ MonoBehaviour:
   m_AnchorPositionOverride: {fileID: 0}
   m_AnchorPositionOffset: {x: 0, y: 0, z: 0}
   m_Yaw: 0
-  m_Pitch: -2.9999542
+  m_Pitch: -2.9999614
   m_Roll: 0
 --- !u!1 &339708274
 GameObject:
@@ -1623,7 +1623,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 4312510042007804440, guid: ae72133dacba6ec4eb33ecde48f50e56, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6933962, g: 1, b: 0.9344936, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -4683,7 +4683,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Mad by group : 3\t\tMalte Gundhus\t\tKim Persson\t\tFelix liebgott\t\tthank
+  m_text: "Made by group : 3\t\tMalte Gundhus\t\tKim Persson\t\tFelix liebgott\t\tthank
     you for playing \n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ff0f4e65186c6bd469d2d422b6e090f3, type: 2}

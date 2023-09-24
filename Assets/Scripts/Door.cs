@@ -14,7 +14,7 @@ public class Door : MonoBehaviour
 
     void Start()
     {
-        SoundEfect();
+        
         lever = GameObject.FindGameObjectWithTag("Lever");
         audioSource = GetComponent<AudioSource>();
     }
@@ -30,7 +30,7 @@ public class Door : MonoBehaviour
     {
         if(other.CompareTag("MainCharacter") && Input.GetKey(KeyCode.E) && lever.GetComponent<Lever>().hasPulledLever == true)
         {
-            SoundEfect();
+            
             SceneManager.LoadScene(sceneToLoad);
         }
     }
