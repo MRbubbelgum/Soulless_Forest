@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private Transform leftFoot, rightFoot;
     [SerializeField] private LayerMask whatIsGround;
-    [SerializeField] private Transform spawnPosition;
+    //[SerializeField] private Transform spawnPosition;//
 
     [SerializeField] private Slider healthSlider;
     [SerializeField] private Image fillColor;
@@ -48,9 +48,9 @@ public class PlayerMovement : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         currentHealth = startingHealth;
-        keyTextUpdate.text = "" + keysCollected;
+        //keyTextUpdate.text = "" + keysCollected;//
         capsuleCollider = GetComponent<CapsuleCollider2D>();
-        transform.position = spawnPosition.position;
+        //transform.position = spawnPosition.position;//
  
     }
 

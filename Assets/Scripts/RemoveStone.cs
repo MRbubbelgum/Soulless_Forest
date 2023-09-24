@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Timeline.Actions;
 using UnityEngine;
 
 public class RemoveStone : MonoBehaviour
@@ -7,15 +8,20 @@ public class RemoveStone : MonoBehaviour
     [SerializeField] private GameObject passageBlockText;
     [SerializeField] private GameObject magicRock;
     [SerializeField] private GameObject magicParticals;
+    [SerializeField] private AudioClip stonSound;
     private PassageBlock passageBlock;
     private WalkUpLadder walkUpLadder;
     private bool mainCharacterIsInsideTrigger = false;
     private bool canSpawnParticals = true;
+
+    private AudioSource soundEfect;
+
     private void Start()
     {
         magicRock.GetComponent<Transform>();
         passageBlock = GetComponent<PassageBlock>();
         walkUpLadder = GetComponent<WalkUpLadder>();
+        soundEfect = GetComponent<AudioSource>();
     }
     private void Update()
     {
@@ -27,6 +33,7 @@ public class RemoveStone : MonoBehaviour
                 Instantiate(magicParticals, new Vector3(magicRock.transform.position.x, 0.1f, -3f), magicRotation);
             }
             magicRock.SetActive(false);
+            SoundEfect();
             GetComponent<PassageBlock>().canPressE = false;
             passageBlock.stoneIsRemoved = true;
             passageBlockText.SetActive(false);
@@ -47,6 +54,10 @@ public class RemoveStone : MonoBehaviour
         {
             mainCharacterIsInsideTrigger = false;
         }
+    }
+    private void SoundEfect() 
+    {
+        soundEfect.PlayOneShot(stonSound, 1f);
     }
 }
 
