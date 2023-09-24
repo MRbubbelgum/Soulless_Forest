@@ -8,19 +8,23 @@ public class EnterBossRoom : MonoBehaviour
     [SerializeField] private GameObject bossRoomPlayerSpawn;
     [SerializeField] private GameObject mainCharacter;
     [SerializeField] private GameObject musicPlayer;
+    [SerializeField] private GameObject boss;
     private BossMusic bossMusic;
     private bool textIsShowing = false;
 
     private void Start()
     {
       bossMusic = musicPlayer.GetComponent<BossMusic>();
+       
     }
     private void Update()
     {
+
         if(textIsShowing && Input.GetKeyDown(KeyCode.E))
         {
             mainCharacter.transform.position = bossRoomPlayerSpawn.transform.position;
             bossMusic.ChangeSoundTrack();
+            boss.SetActive(true);
         }
     }
     private void OnTriggerEnter2D(Collider2D other)

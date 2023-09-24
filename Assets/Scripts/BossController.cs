@@ -24,14 +24,7 @@ public class BossController : MonoBehaviour
 
         if (distance <= attackShoot)
         {
-            // Check the distance to decide which attack to use
-            if (distance < 1.5f)
-            {
-                // Use melee attack when player is close
-                bossAttacks.Attack();
-
-            }
-            else if (distance > 2.5f)
+            if (distance > 2.5f)
             {
                 // Use ranged attack when player is far away
                 if (Time.time - lastAttackTime >= attackCooldown)

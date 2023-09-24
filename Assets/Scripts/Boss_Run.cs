@@ -32,7 +32,7 @@ public class Boss_Run : StateMachineBehaviour
             //attack
             animator.SetTrigger("Attack");
         }
-        if (Vector2.Distance(player.position, rb.position) >= 2.5f)
+        if (Vector2.Distance(player.position, rb.position) <= 10f)
         {
             //Shoot
             animator.SetTrigger("Shoot");

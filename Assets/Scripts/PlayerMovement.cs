@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private AudioClip hurtSound, healthPickupSound, keySound, runGrassSound;
     [SerializeField] private AudioClip[] jumpGrassSounds;
     [SerializeField] private GameObject appleParticals, dustParticles;
-
+    public bool mainCharacterIsDead = false;
    public float runSpeed = 15f;
     public float jumpForce = 300f;
     private float horizontalValue;
@@ -197,7 +197,7 @@ public class PlayerMovement : MonoBehaviour
     }
     public void Death()
     {
-        
+        mainCharacterIsDead = true;
         CantMove();
         animator.SetBool("Death", true);
         if(CheckIfGrounded() == true)
@@ -230,6 +230,7 @@ public class PlayerMovement : MonoBehaviour
     }
     public void Respawn()
     {
+
          animator.SetBool("Death", false);
          //capsuleCollider.enabled = true;//
          transform.position = spawnPosition.position;
