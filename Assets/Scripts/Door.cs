@@ -7,12 +7,14 @@ public class Door : MonoBehaviour
 {
     [SerializeField] private GameObject exitText;
     [SerializeField] private string sceneToLoad;
+    [SerializeField] private AudioClip doorSound;
     private GameObject lever;
     private AudioSource audioSource;
     
 
     void Start()
     {
+        SoundEfect();
         lever = GameObject.FindGameObjectWithTag("Lever");
         audioSource = GetComponent<AudioSource>();
     }
@@ -28,7 +30,7 @@ public class Door : MonoBehaviour
     {
         if(other.CompareTag("MainCharacter") && Input.GetKey(KeyCode.E) && lever.GetComponent<Lever>().hasPulledLever == true)
         {
-            audioSource.Play();
+            SoundEfect();
             SceneManager.LoadScene(sceneToLoad);
         }
     }
@@ -39,6 +41,10 @@ public class Door : MonoBehaviour
     private void WaitUntilRemoveText()
     {
         exitText.SetActive(false);
+    }
+    private void SoundEfect()
+    {
+        audioSource.PlayOneShot(doorSound, 0.6f);
     }
 }
 
