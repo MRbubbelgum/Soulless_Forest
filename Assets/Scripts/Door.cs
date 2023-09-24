@@ -44,7 +44,7 @@ public class Door : MonoBehaviour
     }
     private void SoundEfect()
     {
-        audioSource.PlayOneShot(doorSound, 0.6f);
+        audioSource.PlayOneShot(doorSound, 0.1f);
     }
 }
 
