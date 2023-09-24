@@ -6,12 +6,9 @@ public class SkeletonHolderDisable : MonoBehaviour
 {
     [SerializeField] private GameObject skeletonHolderCollider;
 
-    // Update is called once per frame
-    void Update()
+
+    private void InactivateSkeletonHolder()
     {
-        if(Input.GetKeyDown(KeyCode.R))
-        {
-            skeletonHolderCollider.SetActive(false);
-        }
+        skeletonHolderCollider.SetActive(false);
     }
 }
