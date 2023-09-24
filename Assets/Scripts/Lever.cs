@@ -6,12 +6,15 @@ public class Lever : MonoBehaviour
 {
     [SerializeField] private GameObject pullLeverText;
     [SerializeField] private GameObject somethingChangedText;
+    [SerializeField] private AudioClip leverSound;
     private Animator animator;
     public bool hasPulledLever = false;
+    private AudioSource soundEfect;
 
     void Start()
     {
         animator = GetComponent<Animator>();
+        soundEfect = GetComponent<AudioSource>();
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -25,7 +28,7 @@ public class Lever : MonoBehaviour
         if (other.CompareTag("MainCharacter") && Input.GetKey(KeyCode.E) && hasPulledLever == false)
         {
             animator.SetTrigger("PullLever");
-            //play sound
+            SoundEfect();
             pullLeverText.SetActive(false);
             CancelInvoke("WaitUntilRemoveText");
             Invoke("WaitUntilRemoveText2", 7f);
@@ -51,5 +54,9 @@ public class Lever : MonoBehaviour
     public void SomethingHappenedText()
     {
         somethingChangedText.SetActive(true);
+    }
+    private void SoundEfect()
+    {
+        soundEfect.PlayOneShot(leverSound, 1f);
     }
 }
