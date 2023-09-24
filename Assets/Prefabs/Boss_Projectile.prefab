@@ -175,4 +175,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ecaeebf730102c4290960f04f176fe1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerProximety: 0.1
+  PlayerProximety: 0.45

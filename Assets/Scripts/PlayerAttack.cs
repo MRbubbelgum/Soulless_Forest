@@ -14,8 +14,12 @@ public class PlayerAttack : MonoBehaviour
     public LayerMask whatIsEnemies;
     public float attackRange;
     [SerializeField] private int damage;
+    [SerializeField] private GameObject boss;
+    private boss_health bossHealth;
+    
     private Rigidbody2D rb;
     private Animator anim;
+
     private bool hasHitEnemy = false;
 
     private void Start()
@@ -23,6 +27,8 @@ public class PlayerAttack : MonoBehaviour
         anim = GetComponent<Animator>(); 
         rb = GetComponent<Rigidbody2D>();
         originalAttackPosX = attackPos.position.x;
+        bossHealth = boss.GetComponent<boss_health>();
+        
     }
       void Update()
       {
@@ -42,10 +48,10 @@ public class PlayerAttack : MonoBehaviour
             {
                 timeBtwAttack -= Time.deltaTime;
             }
-            if (anim.GetCurrentAnimatorStateInfo(0).IsName("IsAttacking"))
+          /*  if (anim.GetCurrentAnimatorStateInfo(0).IsName("IsAttacking"))
             {
                 hasHitEnemy = false;
-            }
+            }*/
 
       }
     public void Attack()
@@ -53,14 +59,20 @@ public class PlayerAttack : MonoBehaviour
         Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatIsEnemies);
         foreach (Collider2D enemyCollider in enemiesToDamage)
         {
-            if (enemyCollider.CompareTag("Enemy") && !hasHitEnemy)
+            if (enemyCollider.CompareTag("Enemy")/* && !hasHitEnemy*/)
             {
 
                 EnemySkeleton enemy = enemyCollider.GetComponent<EnemySkeleton>();
                 if (enemy != null)
                 {
                     enemy.TakeDamageEnemy(damage);
-                    hasHitEnemy = true;
+                   // hasHitEnemy = true;
+                }
+                bossHealth = enemyCollider.GetComponent<boss_health>();
+                if (bossHealth != null)
+                {
+                    bossHealth.TakeDamageBoss(damage);
+                    // hasHitEnemy = true;
                 }
             }
         }
