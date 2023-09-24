@@ -11,11 +11,12 @@ GameObject:
   - component: {fileID: 6803918699749702943}
   - component: {fileID: 5889834062269506363}
   - component: {fileID: 486644099900449529}
-  - component: {fileID: 3762656784578974191}
   - component: {fileID: 4865265103676947075}
+  - component: {fileID: -4401951603569990808}
+  - component: {fileID: -3895325498878705183}
   m_Layer: 0
   m_Name: Boss_Projectile
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -75,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 12
   m_Sprite: {fileID: -1035283032, guid: 5df4fddcce94f2b4a89c72521547926c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -114,8 +115,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!70 &3762656784578974191
-CapsuleCollider2D:
+--- !u!114 &4865265103676947075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1720295729388524169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11c8ffadaa365f94c86aa5db68ff6a2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  force: 3
+--- !u!58 &-4401951603569990808
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -126,11 +140,11 @@ CapsuleCollider2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4294967295
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
+    m_Bits: 4294967295
+  m_LayerOverridePriority: 8
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -146,10 +160,10 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.2839677, y: 0.6257096}
-  m_Size: {x: 0.29423913, y: 0.088335045}
-  m_Direction: 1
---- !u!114 &4865265103676947075
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.06646609
+--- !u!114 &-3895325498878705183
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -158,7 +172,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1720295729388524169}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11c8ffadaa365f94c86aa5db68ff6a2d, type: 3}
+  m_Script: {fileID: 11500000, guid: 1ecaeebf730102c4290960f04f176fe1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 5
+  PlayerProximety: 0.1

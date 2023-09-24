@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private Transform leftFoot, rightFoot;
     [SerializeField] private LayerMask whatIsGround;
-    //[SerializeField] private Transform spawnPosition;//
+    [SerializeField] private Transform spawnPosition;
 
     [SerializeField] private Slider healthSlider;
     [SerializeField] private Image fillColor;
@@ -31,15 +31,28 @@ public class PlayerMovement : MonoBehaviour
     public Animator animator;
     private int startingHealth = 100;
     public int currentHealth;
-    [SerializeField] CapsuleCollider2D capsuleCollider;
+    private CapsuleCollider2D capsuleCollider;
     public int keysCollected = 0;
     private bool canPlayRunningSound = true;
-    public bool mainCharacterIsDead = false;
     [SerializeField] private float runningSoundCooldown = 0.45f;
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioSource audioSource2;
     [SerializeField] private AudioSource audioSource3;
 
+    public BossShoot bossShoot;
+
+    /*void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Projectile")) // Check if collided with projectile
+        {
+            Debug.Log("Projectile hit player!"); // Debug message to verify the hit
+
+            int damage = bossShoot.attackDamage; // Access attackDamage from bossShoot
+            TakeDamage(damage); // Apply damage when colliding with a projectile
+
+            Destroy(collision.gameObject); // Destroy the projectile upon collision
+        }
+    }*/
 
 
     void Start()
@@ -48,9 +61,9 @@ public class PlayerMovement : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         currentHealth = startingHealth;
-        //keyTextUpdate.text = "" + keysCollected;//
+        keyTextUpdate.text = "" + keysCollected;
         capsuleCollider = GetComponent<CapsuleCollider2D>();
-        //transform.position = spawnPosition.position;//
+        transform.position = spawnPosition.position;
  
     }
 
@@ -116,7 +129,11 @@ public class PlayerMovement : MonoBehaviour
         {
             return;
         }
-        rb.velocity = new Vector2(horizontalValue * (runSpeed * 10) * Time.deltaTime, rb.velocity.y);
+        if (canMove)
+        {
+            rb.velocity = new Vector2(horizontalValue * (runSpeed * 10) * Time.deltaTime, rb.velocity.y);
+        }
+        
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -180,7 +197,7 @@ public class PlayerMovement : MonoBehaviour
     }
     public void Death()
     {
-        mainCharacterIsDead = true;
+        
         CantMove();
         animator.SetBool("Death", true);
         if(CheckIfGrounded() == true)
@@ -191,10 +208,9 @@ public class PlayerMovement : MonoBehaviour
     }
     public void AfterDeath()
     {
-        capsuleCollider.enabled = false;
+        //rb.velocity = new Vector2(0, 0);//
         rb.bodyType = RigidbodyType2D.Static;
-        capsuleCollider.enabled = false;
-        rb.velocity = new Vector2(0, 0);
+        //capsuleCollider.enabled = false;//
         StartCoroutine(WaitUntilRespawn());
     }
     public IEnumerator WaitUntilRespawn()
@@ -214,14 +230,14 @@ public class PlayerMovement : MonoBehaviour
     }
     public void Respawn()
     {
-        /* animator.SetBool("Death", false);
-         capsuleCollider.enabled = true;
+         animator.SetBool("Death", false);
+         //capsuleCollider.enabled = true;//
          transform.position = spawnPosition.position;
          CanMoveAgain();
          rb.bodyType = RigidbodyType2D.Dynamic;
          heart.color = Color.white;
          currentHealth = startingHealth;
-         UpdateHealthBar(); */
+         UpdateHealthBar(); 
         string currentSceneName = SceneManager.GetActiveScene().name;
         SceneManager.LoadScene(currentSceneName);
     }
@@ -263,9 +279,14 @@ public class PlayerMovement : MonoBehaviour
     }
     public void StartHurting()
     {
-        CantMove();
-        rb.velocity = new Vector2(0, rb.velocity.y);
-        animator.SetBool("IsHurting", true);
+        
+        if (currentHealth <= 0) 
+        {
+            CantMove();
+            //rb.velocity = new Vector2(0, rb.velocity.y);//
+            animator.SetBool("IsHurting", true);
+        } 
+        
     }
     public void StopHurting()
     {

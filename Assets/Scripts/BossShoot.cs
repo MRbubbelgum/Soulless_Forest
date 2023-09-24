@@ -1,16 +1,17 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEditor.PlayerSettings;
 
 public class BossShoot : MonoBehaviour
 {
     public GameObject bullet;
     public Transform bulletPos;
     private GameObject player;
+    [SerializeField] public LayerMask attackMask;
     private float timer;
-    private Animator anim;
+    public float attackShoot = 200.0f;
+    public float attackRange = 1.0f;
+    public int attackDamage = 20;
+    
 
     void Start()
     {
@@ -23,24 +24,27 @@ public class BossShoot : MonoBehaviour
     {
         
 
-        float distance = Vector2.Distance(transform.position, player.transform.position);
-        Debug.Log(distance);
-        if(distance > 2.5 ||  distance < 1.5)
+        /*float distance = Vector2.Distance(transform.position, player.transform.position);
+        if (distance >= attackShoot)
         {
-            timer += Time.deltaTime;
-            if (timer > 2)
+            if (distance > 2.5 || distance < 1.5) ;
             {
-                timer = 0;
-                shoot();
-                
+                timer += Time.deltaTime;
+                if (timer > 2)
+                {
+                    timer = 0;
+                    Shoot();
+
+                }
             }
-        }
+        }*/
+
         
     }
-    public void shoot()
+    public void Shoot()
     {
-        Instantiate(bullet, bulletPos.position, Quaternion.identity);
-        //anim.SetTrigger("Shoot");
-    }
+        GameObject newBullet = Instantiate(bullet, bulletPos.position, Quaternion.identity);
 
+        
+    }
 }
