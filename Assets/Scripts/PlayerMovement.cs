@@ -129,7 +129,11 @@ public class PlayerMovement : MonoBehaviour
         {
             return;
         }
-        rb.velocity = new Vector2(horizontalValue * (runSpeed * 10) * Time.deltaTime, rb.velocity.y);
+        if (canMove)
+        {
+            rb.velocity = new Vector2(horizontalValue * (runSpeed * 10) * Time.deltaTime, rb.velocity.y);
+        }
+        
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -204,9 +208,9 @@ public class PlayerMovement : MonoBehaviour
     }
     public void AfterDeath()
     {
+        //rb.velocity = new Vector2(0, 0);//
         rb.bodyType = RigidbodyType2D.Static;
-        capsuleCollider.enabled = false;
-        rb.velocity = new Vector2(0, 0);
+        //capsuleCollider.enabled = false;//
         StartCoroutine(WaitUntilRespawn());
     }
     public IEnumerator WaitUntilRespawn()
@@ -226,14 +230,14 @@ public class PlayerMovement : MonoBehaviour
     }
     public void Respawn()
     {
-        /* animator.SetBool("Death", false);
-         capsuleCollider.enabled = true;
+         animator.SetBool("Death", false);
+         //capsuleCollider.enabled = true;//
          transform.position = spawnPosition.position;
          CanMoveAgain();
          rb.bodyType = RigidbodyType2D.Dynamic;
          heart.color = Color.white;
          currentHealth = startingHealth;
-         UpdateHealthBar(); */
+         UpdateHealthBar(); 
         string currentSceneName = SceneManager.GetActiveScene().name;
         SceneManager.LoadScene(currentSceneName);
     }
@@ -275,9 +279,14 @@ public class PlayerMovement : MonoBehaviour
     }
     public void StartHurting()
     {
-        CantMove();
-        rb.velocity = new Vector2(0, rb.velocity.y);
-        animator.SetBool("IsHurting", true);
+        
+        if (currentHealth <= 0) 
+        {
+            CantMove();
+            //rb.velocity = new Vector2(0, rb.velocity.y);//
+            animator.SetBool("IsHurting", true);
+        } 
+        
     }
     public void StopHurting()
     {

@@ -8,6 +8,7 @@ public class BossShoot : MonoBehaviour
     private GameObject player;
     [SerializeField] public LayerMask attackMask;
     private float timer;
+    public float attackShoot = 200.0f;
     public float attackRange = 1.0f;
     public int attackDamage = 20;
     
@@ -23,18 +24,21 @@ public class BossShoot : MonoBehaviour
     {
         
 
-        float distance = Vector2.Distance(transform.position, player.transform.position);
-        
-        if(distance > 2.5 ||  distance < 1.5)
+        /*float distance = Vector2.Distance(transform.position, player.transform.position);
+        if (distance >= attackShoot)
         {
-            timer += Time.deltaTime;
-            if (timer > 2)
+            if (distance > 2.5 || distance < 1.5) ;
             {
-                timer = 0;
-                Shoot();
-                
+                timer += Time.deltaTime;
+                if (timer > 2)
+                {
+                    timer = 0;
+                    Shoot();
+
+                }
             }
-        }
+        }*/
+
         
     }
     public void Shoot()

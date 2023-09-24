@@ -6,8 +6,8 @@ public class BossController : MonoBehaviour
 {
     public BossAttacks bossAttacks;
     public BossShoot bossShoot;
-    
 
+    public float attackShoot = 200.0f;
     private Transform player;
     private float attackCooldown = 2f;
     private float lastAttackTime = 0f;
@@ -22,21 +22,25 @@ public class BossController : MonoBehaviour
     {
         float distance = Vector2.Distance(transform.position, player.position);
 
-        // Check the distance to decide which attack to use
-        if (distance < 1.5f)
+        if (distance <= attackShoot)
         {
-            // Use melee attack when player is close
-            bossAttacks.Attack();
-            
-        }
-        else if (distance > 2.5f)
-        {
-            // Use ranged attack when player is far away
-            if (Time.time - lastAttackTime >= attackCooldown)
+            // Check the distance to decide which attack to use
+            if (distance < 1.5f)
             {
-                bossShoot.Shoot();
-                lastAttackTime = Time.time;
+                // Use melee attack when player is close
+                bossAttacks.Attack();
+
             }
-        }
+            else if (distance > 2.5f)
+            {
+                // Use ranged attack when player is far away
+                if (Time.time - lastAttackTime >= attackCooldown)
+                {
+                    bossShoot.Shoot();
+                    lastAttackTime = Time.time;
+                }
+            }
+        } 
+           
     }
 }
